@@ -1,4 +1,4 @@
-# winston-newrelic
+# winston-newrelic [![Build Status](https://secure.travis-ci.org/ranm8/winston-newrelic.png?branch=master)](http://travis-ci.org/ranm8/winston-newrelic)
 
 New Relic trasporter for [winston](https://github.com/flatiron/winston).
 Logs winston caught exceptions and logs to New Relic.
