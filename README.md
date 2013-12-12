@@ -3,6 +3,10 @@
 New Relic trasporter for [winston](https://github.com/flatiron/winston).
 Logs winston caught exceptions and logs to New Relic.
 
+## Installation
+
+	$ npm install winston-newrelic
+
 ## Usage
 
 ```javascript
