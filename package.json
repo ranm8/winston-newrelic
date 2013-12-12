@@ -1,0 +1,43 @@
+{
+  "name": "winston-newrelic",
+  "description": "Reports winston log errors to new-relic",
+  "version": "0.1.0",
+  "scripts": {
+    "test": "mocha -R spec test/*.js test/*.js"
+  },
+  "license": "MIT",
+  "tags": [
+    "log",
+    "newrelic",
+    "new-relic",
+    "winston",
+    "new-relic transporter",
+    "util",
+    "new-relic client"
+  ],
+  "author": {
+    "name": "Ran Mizrahi",
+    "email": "ranm@codeoasis.com"
+  },
+  "dependencies": {
+    "newrelic": "~1.2.0",
+    "winston": "~1.2.0"
+  },
+  "devDependencies": {
+    "mocha": "~1.9.0",
+    "chai": "~1.6.1",
+    "sinon": "~1.7.2",
+    "rewire": "~1.1.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ranm8/winston-newrelic.git"
+  },
+  "engines": {
+    "node": "~0.10.x"
+  },
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/ranm8/winston-newrelic/issues"
+  }
+}
