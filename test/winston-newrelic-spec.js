@@ -4,8 +4,7 @@ var mocha = require('mocha'),
     sinon = require('sinon'),
     expect = require('chai').expect,
     rewire = require('rewire'),
-    WinstonNewrelic = rewire('../lib/winston-newrelic'),
-    Q = require('q');
+    WinstonNewrelic = rewire('../lib/winston-newrelic');
 
 describe('winston-newrelic', function() {
 
