@@ -63,12 +63,20 @@ describe('winston-newrelic', function() {
     });
 
     describe('#log()', function() {
-        it('should log the log message to newrelic by creating new Error() object', function() {
+        var msg = 'just another error';
 
+        it('should log the log message to newrelic by creating new Error() object', function() {
+            instance.log('error', msg, {}, function(){});
+
+            expect(newrelicMock.noticeError.calledWith(new Error(msg))).to.equal(true);
         });
 
         it('should call the callback with null and true for success', function() {
+            var callback = sinon.stub();
 
+            instance.log('error', msg, {}, callback);
+
+            expect(callback.calledWith(null, true)).to.equal(true);
         });
     });
 });
