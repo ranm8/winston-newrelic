@@ -5,7 +5,7 @@ Logs winston caught exceptions and logs to New Relic.
 
 ## Installation
 
-	$ npm install winston-newrelic
+	npm install winston-newrelic
 
 ## Usage
 
