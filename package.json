@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "newrelic": "~1.2.0",
-    "winston": "~1.2.0"
+    "winston": "~0.7.2"
   },
   "devDependencies": {
     "mocha": "~1.9.0",
