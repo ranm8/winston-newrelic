@@ -16,7 +16,7 @@ require('newrelic');
 var winston = require('winston'),
     WinstonNewrelic = require('winston-newrelic');
 
-// Add newrelic logger as trasporter
+// Add newrelic logger as transporter
 winston.add(winston.transports.newrelic, {});
 ```
 
