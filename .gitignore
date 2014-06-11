@@ -9,5 +9,16 @@ lib-cov
 *.pid
 *.swp
 *.swo
+
+# Webstorm Settings
+.idea/*
+!.idea/inspectionProfiles
+!.idea/jsLinters
+
+# Istanbul Output
+coverage/
+
+# NPM Dependencies
 node_modules/
-.idea/
+/.project
+/dist
