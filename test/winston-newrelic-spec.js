@@ -64,18 +64,45 @@ describe('winston-newrelic', function() {
     describe('#log()', function() {
         var msg = 'just another error';
 
-        it('should log the log message to newrelic by creating new Error() object', function() {
+        it('logs a string message to newrelic as is', function() {
             instance.log('error', msg, {}, function(){});
 
-            expect(newrelicMock.noticeError.calledWith(new Error(msg))).to.equal(true);
+            expect(newrelicMock.noticeError.calledWith(msg)).to.equal(true);
         });
 
-        it('should call the callback with null and true for success', function() {
+        it('calls the callback with null and true for success', function() {
             var callback = sinon.stub();
 
             instance.log('error', msg, {}, callback);
 
             expect(callback.calledWith(null, true)).to.equal(true);
+        });
+
+        it('logs a error-ish object when meta contains a stack', function(){
+            instance.log('error', msg, {stack: ['stack']}, function(){});
+
+            expect(newrelicMock.noticeError.calledWith({
+                message: msg,
+                stack: ['stack']
+            })).to.equal(true);
+        });
+
+        it('does not ovveride message when meta meta contains a message', function(){
+            instance.log('error', msg, {stack: ['stack'], message: 'm'}, function(){});
+
+            expect(newrelicMock.noticeError.calledWith({
+                message: 'm',
+                stack: ['stack']
+            })).to.equal(true);
+        });
+        it('passes on the meta object as is', function(){
+            var meta = {stack: ['stack'], message: 'm', line: 10, col: 20};
+            instance.log('error', msg, meta, function(){});
+
+            expect(newrelicMock.noticeError.calledWith({
+                message: 'm',
+                stack: ['stack']
+            }, meta)).to.equal(true);
         });
     });
 });
