@@ -20,4 +20,8 @@ var winston = require('winston'),
 winston.add(winston.transports.newrelic, {});
 ```
 
+# Using custom newrelic module
 
+``javascript
+winston.add(winston.transports.newrelic, {newrelic: require('/path/to/your/newrelic')});
+``

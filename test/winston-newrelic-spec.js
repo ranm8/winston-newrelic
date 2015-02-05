@@ -64,10 +64,10 @@ describe('winston-newrelic', function() {
     describe('#log()', function() {
         var msg = 'just another error';
 
-        it('should log the log message to newrelic by creating new Error() object', function() {
-            instance.log('error', msg, {}, function(){});
+        it('should log the log message to newrelic with a string and metadata', function() {
+            instance.log('error', msg, {meta: 'infos'}, function(){});
 
-            expect(newrelicMock.noticeError.calledWith(new Error(msg))).to.equal(true);
+            expect(newrelicMock.noticeError.calledWith(msg, {meta: 'infos'})).to.equal(true);
         });
 
         it('should call the callback with null and true for success', function() {
